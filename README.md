@@ -1,2 +1,2 @@
-# AndroidFlutter
-Android application created with the flutter framework
+# AutoFlutter
+Android and ios applications developed with the flutter framework
