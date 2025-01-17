@@ -6,6 +6,10 @@ on:
   push:
     branches: [ deployment ]
 
+defaults:
+  run:
+    working-directory: /automate
+
 jobs:
   build:
     runs-on: ubuntu-latest
