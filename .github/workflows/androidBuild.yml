@@ -4,7 +4,7 @@ on:
   #To trigger manually
   workflow_dispatch:
   push:
-    branches: [ deployment ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -26,27 +26,27 @@ jobs:
         run: ls -la
 
       - name: Navigate to android project
-        run : cd automate
+        run : cd automate/android
 
       - name: List files in android directory
         run: ls -la
-        working-directory: automate
+        working-directory: android
 
       - name: Change wrapper permissions  // 2
         run: chmod +x ./gradlew
-        working-directory: automate
+        working-directory: android
 
       - name: Run Tests                   // 3
         run: ./gradlew test
-        working-directory: automate
+        working-directory: android
 
       - name: Build Project               // 4
         run: ./gradlew build
-        working-directory: automate
+        working-directory: android
 
       - name: Build Release AAB
         run: ./gradlew bundleRelease
-        working-directory: automate
+        working-directory: android
 
       - name: Sign AAB
         uses: r0adkll/sign-android-release@v1
